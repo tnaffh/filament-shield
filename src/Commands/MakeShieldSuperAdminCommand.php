@@ -70,7 +70,7 @@ class MakeShieldSuperAdminCommand extends Command
             $this->superAdmin->assignRole(Utils::getFilamentUserRoleName());
         }
 
-        $loginUrl = route('filament.auth.login');
+        $loginUrl = filament()->getLoginUrl();
         $this->info("Success! {$this->superAdmin->email} may now log in at {$loginUrl}.");
 
         return self::SUCCESS;

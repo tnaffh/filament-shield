@@ -10,7 +10,7 @@ class Utils
 {
     public static function getFilamentAuthGuard(): string
     {
-        return (string) config('filament.auth.guard');
+        return (string) filament()->getCurrentContext()->getAuthGuard();
     }
 
     public static function isResourcePublished(): bool
